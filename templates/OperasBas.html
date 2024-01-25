@@ -1,0 +1,22 @@
+{% extends "layout.html" %} 
+{% block content %}
+
+<h1>Calcular</h1>
+
+<form action="/resultado" method="POST">
+    <label for="">Suma</label>
+    <input type="radio" name="checksum" id="checksum">
+    <label for="">Resta</label>
+    <input type="radio" name="checkrest" id="checkrest">
+    <label for="">Multiplicacion</label>
+    <input type="radio" name="checkmulti" id="checkmulti">
+    <label for="">Division</label>
+    <input type="radio" name="checkdiv" id="checkdiv">
+  <label>N1: </label>
+  <input class="form-control" type="text" name="n1" /><br />
+  <label>N2: </label>
+  <input class="form-control" type="text" name="n2" /><br />
+  <button class="btn btn-primary" type="submit">Enviar</button>
+</form>
+
+{% endblock %}
