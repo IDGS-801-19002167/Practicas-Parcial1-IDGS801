@@ -1,0 +1,48 @@
+<!-- Extends layout -->
+{% extends "layout.html" %}
+
+<!-- Content -->
+{% block content %}
+
+<!-- Macros -->
+{% import "_macros.html" as macros %}
+
+<!-- Form content -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="" method="POST" novalidate>
+                <div class="form-group">
+                    {{ macros.datos("number1", "X1", "number", "form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ macros.datos("number2", "Y1", "number", "form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ macros.datos("number3", "X2", "number", "form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ macros.datos("number4", "Y2", "number", "form-control") }}
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>X1: {{number1}}</h1>
+            <h1>Y1: {{number2}}</h1>
+            <h1>X2: {{number3}}</h1>
+            <h1>Y2: {{number4}}</h1>
+            <br>
+            <h2>Result: {{resultC}}</h2>
+        </div>
+    </div>
+</div>
+<!--  -->
+
+<!-- END CONTENT -->
+{% endblock %}
