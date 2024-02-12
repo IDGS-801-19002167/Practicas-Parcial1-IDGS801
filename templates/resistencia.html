@@ -1,0 +1,84 @@
+<!-- Extends layout -->
+{% extends "layout.html" %}
+
+<!-- Content -->
+{% block content %}
+
+<!-- Macros -->
+{% import "_macroresistencia.html" as macros %}
+
+<!-- Content -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form action="" method="POST" novalidate>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            {{ macros.datos("banda1", "form-control") }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            {{ macros.datos("banda2", "form-control") }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            {{ macros.datos2("banda3", "form-control") }}
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="form-group">
+                        {{ macros.datos3("Oro") }}
+                        <label for="">Oro</label>
+                        {{ macros.datos3("Plata") }}
+                        <label for="">Plata</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button  type="submit" class="btn btn-lg btn-primary">
+                        Registrar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead class="text-center">
+                        <tr>
+                            <th>Color 1</th>
+                            <th>Color 2</th>
+                            <th>Color 3</th>
+                            <th>Tolerancia</th>
+                            <th>Valor</th>
+                            <th>Valor Minimo</th>
+                            <th>Valor Maximo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{ macros.datos4(nmcolor1, color1) }}
+                            {{ macros.datos4(nmcolor2, color2) }}
+                            {{ macros.datos4(nmcolor3, color3) }}
+                            {{ macros.datos4(rdo, color4) }}
+                            {{ macros.datos4(value) }}
+                            {{ macros.datos4(maxValue) }}
+                            {{ macros.datos4(minValue) }}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- END CONTENT -->
+{% endblock %}

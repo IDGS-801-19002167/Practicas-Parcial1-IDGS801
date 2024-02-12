@@ -1,0 +1,41 @@
+{% macro datos (name, class="") %}
+    <select name="{{ name }}" id="" class="{{ class }}">
+        <option value="" selected disabled>Seleccionar</option>
+        <option value="0">Negro</option>
+        <option value="1">Cafe</option>
+        <option value="2">Rojo</option>
+        <option value="3">Naranja</option>
+        <option value="4">Amarillo</option>
+        <option value="5">Verde</option>
+        <option value="6">Azul</option>
+        <option value="7">Violeta</option>
+        <option value="8">Gris</option>
+        <option value="9">Blanco</option>
+    </select>
+{% endmacro %}
+
+{% macro datos2 (name, class="") %}
+    <select name="{{ name }}" id="" class="{{ class }}">
+        <option value="" selected disabled>Seleccionar</option>
+        <option value="1">Negro</option>
+        <option value="10">Cafe</option>
+        <option value="100">Rojo</option>
+        <option value="1000">Naranja</option>
+        <option value="10000">Amarillo</option>
+        <option value="100000">Verde</option>
+        <option value="1000000">Azul</option>
+        <option value="10000000">Violeta</option>
+        <option value="100000000">Gris</option>
+        <option value="1000000000">Blanco</option>
+    </select>
+{% endmacro %}
+
+{% macro datos3 (value) %}
+<input type="radio" name="rdo" id="" value="{{ value }}" class="form-control">
+{% endmacro %}
+
+<!-- rcardielr@universidaddeleon.edu.mx -->
+
+{% macro datos4(value, color="") %}
+<td style="background-color: {{ color }};">{{ value }}</td>
+{% endmacro %}
