@@ -1,0 +1,56 @@
+{% extends "layout.html" %} 
+{% block content %}
+{% import "_macros.html" as macros %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h3>Agregar colores</h3>
+          <form action="" method="POST" novalidate>
+            <div class="form-group">
+              <label for="">Ingl&eacute;s</label>
+              {{ macros.calcu(form.ingles, class="form-control") }}
+            </div>
+            <div class="form-group">
+              <label for="">Español</label>
+              {{ macros.calcu(form.espanol, class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h3>Buscar colores</h3>
+          <form action="" method="POST" novalidate>
+            <div class="form-group">
+              {{ macros.datos2("ingles", "Inglés") }}
+            </div>
+            <div class="form-group">
+              {{ macros.datos2("espanol", "Español") }}
+            </div>
+            <div class="form-group">
+              {{ macros.datos("buscar", "Buscar color", "text", "form-control")
+              }}
+            </div>
+            <button type="submit" class="btn btn-info">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <h4>
+      Color encontrado:
+      <span style="color: {{ busqueda }};">{{ busqueda }}</span>
+    </h4>
+  </div>
+  <br />
+</div>
+
+{% endblock %}

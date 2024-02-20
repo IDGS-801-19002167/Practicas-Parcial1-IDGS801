@@ -8,14 +8,30 @@
 <!-- End Macro attr -->
 {% endmacro %}
 
+{% macro datos2(value, label) %}
+<div class="form-check">
+    <input type="radio" name="lang" id="{{ value }}" value="{{ value }}" class="form-check-input">
+    <label class="form-check-label" for="{{ value }}">{{ label }}</label>
+</div>
+{% endmacro %}
+
+
 {% macro calcu (field) %}
 
 <td>
-    {{ field.label }}
+    {{ field.input }}
 </td>
 
 <dd>
     {{ field(**kwargs) | safe }}
 </dd>
+
+{% if field.errors %}
+<ul style="list-style: none;">
+  {% for error in field.errors %}
+    <li style="color: red">{{ error }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
 
 {% endmacro %}
